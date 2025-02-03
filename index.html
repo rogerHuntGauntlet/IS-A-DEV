@@ -111,6 +111,34 @@
             left: -5px;
             color: #FF6B6B;
         }
+
+        .blog-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .blog-image-container {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            font-size: 0.9em;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -140,6 +168,23 @@
                 <h3>Landing in Austin: The In-Person Gauntlet Begins! 🚀</h3>
                 <div class="post-date">March 25, 2024</div>
                 <p>After completing my first month of Gauntlet AI virtually, I've touched down in Austin, Texas for the in-person phase of the program. The energy here is absolutely electric! I'm now surrounded by 120 talented developers, all pushing the boundaries of what's possible with AI.</p>
+
+                <div class="blog-images">
+                    <div class="blog-image-container">
+                        <img src="assets/gauntlet-meeting.jpg" alt="Gauntlet AI group meeting" class="blog-image">
+                        <div class="image-caption">First day kickoff meeting with 120 developers ready to build the future</div>
+                    </div>
+                    
+                    <div class="blog-image-container">
+                        <img src="assets/gauntlet-pool.jpg" alt="Poolside networking event" class="blog-image">
+                        <div class="image-caption">Networking by the pool - where great ideas and friendships form</div>
+                    </div>
+                    
+                    <div class="blog-image-container">
+                        <img src="assets/gauntlet-bbq.jpg" alt="Texas BBQ pit" class="blog-image">
+                        <div class="image-caption">Nothing beats Texas BBQ after a long day of coding!</div>
+                    </div>
+                </div>
 
                 <h4>Week 1 Challenge: Build a TikTok Clone in 5 Days</h4>
                 <p>Talk about hitting the ground running! On Monday, we were given what seems like an impossible task: build a complete TikTok clone and get it published in the app store by the end of the week. The timeline is absolutely ridiculous, but that's exactly what makes Gauntlet AI special - we're here to do the impossible!</p>
