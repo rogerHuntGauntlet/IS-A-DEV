@@ -25,6 +25,38 @@
             100% { background-position: 0% 50%; }
         }
 
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(100px);
+            border: 2px solid #FF6B6B;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #FF6B6B;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+
         header {
             text-align: center;
             padding: 20px;
@@ -223,6 +255,26 @@
         </div>
     </div>
 
+    <div id="researchOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-overlay" onclick="closeResearchOverlay()">&times;</span>
+            <h3>📚 Research Projects</h3>
+            <h4>Wittgenstein Project</h4>
+            <p>A novel transactional reading of Wittgenstein's later philosophy, exploring language games and forms of life through a pragmatic lens.</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin: 15px 0;">
+                    <a href="https://github.com/rogerHuntGauntlet/Second-Brain/tree/ba127e2504f0606ad94513301ac95f5ab6b3041c/Witt-Trans" class="download-btn" target="_blank">View Research Repository 📂</a>
+                </li>
+                <li style="margin: 15px 0;">
+                    <a href="https://docs.google.com/document/d/1Zgc_bE1X1zJLCEInT1pAKrL0xU7QMWmorUlbhJZuJdw/edit?usp=drive_link" class="download-btn" target="_blank">The Case for a Transactional Reading 📄</a>
+                </li>
+                <li style="margin: 15px 0;">
+                    <a href="https://docs.google.com/document/d/1VYYf6uNm1iPI97fJduXIwLI1PItDMg7CEuU8En2__eE/edit?usp=sharing" class="download-btn" target="_blank">Bentley - Focused Proposal 📄</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <header>
         <h1>AI Pilot</h1>
         <p>Building AI-powered applications in the GauntletAI program</p>
@@ -235,7 +287,7 @@
         <a href="https://ohfpartners.com" target="_blank">OHF Partners 🏢</a>
         <a href="https://calendly.com/roger-hunt-1" target="_blank">Book a Meeting 📅</a>
         <a href="#" onclick="showOverlay(); return false;">Download OHFtok (Android) 📱</a>
-        <a href="https://github.com/rogerHuntGauntlet/Second-Brain/tree/ba127e2504f0606ad94513301ac95f5ab6b3041c/Witt-Trans" target="_blank">Wittgenstein Project 📚</a>
+        <a href="#" onclick="showResearchOverlay(); return false;">Research 📚</a>
     </div>
 
     <main>
@@ -519,6 +571,8 @@
         <p>✨ Check back weekly for new posts! ✨</p>
     </footer>
 
+    <a href="#" class="back-to-top" id="backToTop" title="Back to Top">⬆️</a>
+
     <script>
         function showOverlay() {
             document.getElementById('downloadOverlay').style.display = 'flex';
@@ -528,10 +582,43 @@
             document.getElementById('downloadOverlay').style.display = 'none';
         }
 
+        function showResearchOverlay() {
+            document.getElementById('researchOverlay').style.display = 'flex';
+        }
+
+        function closeResearchOverlay() {
+            document.getElementById('researchOverlay').style.display = 'none';
+        }
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Close overlay when clicking outside the content
         document.getElementById('downloadOverlay').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeOverlay();
+            }
+        });
+
+        document.getElementById('researchOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResearchOverlay();
             }
         });
     </script>
