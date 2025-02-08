@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": "saturday-brunch",
+      "title": "Saturday Brunch: Fueling the AI Revolution! 🍳",
+      "date": "March 30, 2024",
+      "summary": "Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread.",
+      "content": "Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread. When you're working 100-hour weeks, you've got to make those breaks count!",
+      "images": [
+        {
+          "src": "assets/WhatsApp Image 2025-02-08 at 08.06.15_3967b4bf.jpg",
+          "alt": "Three delicious casseroles arranged on a wooden table: a savory bacon and egg casserole, sweet cinnamon roll casserole, and golden-brown French toast casserole",
+          "caption": "Saturday's epic brunch spread: Bacon and egg casserole, cinnamon roll casserole, and French toast casserole! 🍽️"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Brunch of Champions 🏆",
+          "content": "Today's menu was nothing short of spectacular:",
+          "list": [
+            "Savory bacon and egg casserole",
+            "Sweet and gooey cinnamon roll casserole",
+            "Decadent French toast casserole"
+          ]
+        },
+        {
+          "title": "Back to Building! 💻",
+          "content": "With our batteries recharged and our bellies full, it's back to work on OHFtok! Haven't tried it yet? Download our Android app from the link in the header and join the revolution in social video! We can't wait to see what you'll create."
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "per_page": 5,
+    "total_posts": 1
+  }
+} 

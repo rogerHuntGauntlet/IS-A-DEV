@@ -4,19 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Engineer Journey</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Follow my journey as an AI Engineer in the GauntletAI program, building cutting-edge AI-powered applications and sharing insights along the way.">
+    <meta name="keywords" content="AI Engineer, GauntletAI, Software Development, Machine Learning, Tech Blog">
+    <meta name="author" content="Roger Hunt">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI Engineer Journey">
+    <meta property="og:description" content="Follow my journey as an AI Engineer in the GauntletAI program, building cutting-edge AI-powered applications and sharing insights along the way.">
+    <meta property="og:image" content="https://is-a.dev/assets/WhatsApp%20Image%202025-02-03%20at%2014.49.05_96dc7e0d.jpg">
+    <meta property="og:url" content="https://is-a.dev">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@roger_jgs404040">
+    <meta name="twitter:title" content="AI Engineer Journey">
+    <meta name="twitter:description" content="Follow my journey as an AI Engineer in the GauntletAI program, building cutting-edge AI-powered applications and sharing insights along the way.">
+    <meta name="twitter:image" content="https://is-a.dev/assets/WhatsApp%20Image%202025-02-03%20at%2014.49.05_96dc7e0d.jpg">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
         
+        :root {
+            /* Light theme variables (default) */
+            --bg-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEEAD);
+            --text-color: #333;
+            --blog-post-bg: rgba(255, 255, 255, 0.9);
+            --header-bg: rgba(0, 0, 0, 0.8);
+            --header-text: #fff;
+            --link-bg: #333;
+            --link-text: #fff;
+            --link-hover: #FF6B6B;
+            --post-date: #666;
+            --overlay-bg: rgba(0, 0, 0, 0.8);
+            --overlay-content-bg: white;
+            --close-btn: #666;
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme variables */
+            --bg-gradient: linear-gradient(45deg, #1a1a1a, #2d2d2d, #333333, #404040, #4d4d4d);
+            --text-color: #f1f1f1;
+            --blog-post-bg: rgba(40, 40, 40, 0.9);
+            --header-bg: rgba(20, 20, 20, 0.9);
+            --header-text: #fff;
+            --link-bg: #4a4a4a;
+            --link-text: #fff;
+            --link-hover: #FF6B6B;
+            --post-date: #aaa;
+            --overlay-bg: rgba(0, 0, 0, 0.9);
+            --overlay-content-bg: #2d2d2d;
+            --close-btn: #aaa;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEEAD);
+            background: var(--bg-gradient);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
-            color: #333;
+            color: var(--text-color);
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         @keyframes gradient {
@@ -28,8 +81,8 @@
         header {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
+            background: var(--header-bg);
+            color: var(--header-text);
             border-radius: 15px;
             margin-bottom: 30px;
             border: 3px solid #FF6B6B;
@@ -48,13 +101,14 @@
         }
 
         .blog-post {
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--blog-post-bg);
+            color: var(--text-color);
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: 2px solid #4ECDC4;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
 
         .blog-post:hover {
@@ -62,7 +116,7 @@
         }
 
         .post-date {
-            color: #666;
+            color: var(--post-date);
             font-size: 0.9em;
             font-style: italic;
         }
@@ -75,8 +129,8 @@
         .social-links a {
             display: inline-block;
             padding: 10px 20px;
-            background: #333;
-            color: #fff;
+            background: var(--link-bg);
+            color: var(--link-text);
             text-decoration: none;
             border-radius: 25px;
             margin: 5px;
@@ -85,7 +139,7 @@
         }
 
         .social-links a:hover {
-            background: #FF6B6B;
+            background: var(--link-hover);
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
         }
@@ -124,12 +178,36 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background: var(--blog-post-bg);
         }
 
         .blog-image {
             width: 100%;
             height: auto;
             display: block;
+            transition: filter 0.3s ease;
+            filter: blur(0);
+        }
+
+        .blog-image.loading {
+            filter: blur(10px);
+            min-height: 200px;
+            background: var(--blog-post-bg);
+        }
+
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--blog-post-bg);
+            color: var(--text-color);
+            font-size: 14px;
         }
 
         .image-caption {
@@ -147,14 +225,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: var(--overlay-bg);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
 
         .overlay-content {
-            background: white;
+            background: var(--overlay-content-bg);
+            color: var(--text-color);
             padding: 30px;
             border-radius: 15px;
             max-width: 500px;
@@ -183,7 +262,7 @@
             right: 15px;
             font-size: 24px;
             cursor: pointer;
-            color: #666;
+            color: var(--close-btn);
         }
 
         .download-btn {
@@ -201,13 +280,316 @@
             background: #ff5252;
             transform: scale(1.05);
         }
+
+        /* Theme toggle button styles */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: var(--link-bg);
+            border: 2px solid #FF6B6B;
+            color: var(--link-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background: var(--link-hover);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-bg);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            cursor: default;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-caption {
+            color: var(--header-text);
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--header-text);
+            font-size: 30px;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--header-text);
+            font-size: 40px;
+            cursor: pointer;
+            padding: 20px;
+            user-select: none;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--header-text);
+            font-size: 24px;
+            display: none;
+        }
+
+        /* Add touch feedback for mobile */
+        @media (hover: none) {
+            .lightbox-nav {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Search styles */
+        .search-container {
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 20px;
+            border: 2px solid #4ECDC4;
+            border-radius: 25px;
+            font-size: 16px;
+            background: var(--blog-post-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #FF6B6B;
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: var(--post-date);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--post-date);
+            font-size: 18px;
+            display: none;
+            transition: color 0.3s ease;
+        }
+
+        .search-clear:hover {
+            color: #FF6B6B;
+        }
+
+        .search-results {
+            margin: 10px 0;
+            text-align: center;
+            color: var(--post-date);
+            font-style: italic;
+            min-height: 24px;
+        }
+
+        .blog-post.hidden {
+            display: none;
+        }
+
+        .highlight {
+            background-color: rgba(255, 107, 107, 0.2);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        /* Back to top button styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--link-bg);
+            color: var(--link-text);
+            border: 2px solid #FF6B6B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 20px;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--link-hover);
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Comment section styles */
+        .comments-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--link-hover);
+        }
+
+        .comments-section h3 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        #disqus_thread {
+            background: var(--blog-post-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .comment-count {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--post-date);
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        .comment-count:hover {
+            color: var(--link-hover);
+        }
+
+        /* Loading indicator styles */
+        .loading-indicator {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--blog-post-bg);
+            border-top: 4px solid var(--link-hover);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .load-more-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background: var(--link-bg);
+            color: var(--link-text);
+            border: 2px solid #FF6B6B;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            background: var(--link-hover);
+            transform: scale(1.05);
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 20px;
+            color: #FF6B6B;
+            background: var(--blog-post-bg);
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div id="downloadOverlay" class="overlay">
+    <!-- Theme toggle button with improved accessibility -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" role="switch" aria-checked="false">🌓</button>
+
+    <!-- Back to top button with improved accessibility -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top" role="button">↑</button>
+
+    <div id="downloadOverlay" class="overlay" role="dialog" aria-labelledby="downloadTitle" aria-modal="true">
         <div class="overlay-content">
-            <span class="close-overlay" onclick="closeOverlay()">&times;</span>
-            <h3>📱 OHFtok Download Instructions</h3>
+            <span class="close-overlay" onclick="closeOverlay()" aria-label="Close download instructions">&times;</span>
+            <h3 id="downloadTitle">📱 OHFtok Download Instructions</h3>
             <ol>
                 <li>Download the APK from the <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" class="download-btn" target="_blank">Google Drive link</a></li>
                 <li>On your Android device:
@@ -223,268 +605,80 @@
         </div>
     </div>
 
-    <header>
-        <h1>AI Engineer's Journey</h1>
-        <p>Building AI-powered applications in the GauntletAI program</p>
-    </header>
-
-    <div class="social-links">
-        <a href="https://github.com/rogerHuntGauntlet" target="_blank">GitHub ⚡</a>
-        <a href="https://www.linkedin.com/in/rogerjgs404040/" target="_blank">LinkedIn 🔗</a>
-        <a href="https://x.com/roger_jgs404040" target="_blank">Twitter 🐦</a>
-        <a href="https://ohfpartners.com" target="_blank">OHF Partners 🏢</a>
-        <a href="https://calendly.com/roger-hunt-1" target="_blank">Book a Meeting 📅</a>
-        <a href="#" onclick="showOverlay(); return false;">Download OHFtok (Android) 📱</a>
+    <!-- Lightbox with improved accessibility -->
+    <div id="imageLightbox" class="lightbox" role="dialog" aria-label="Image lightbox" aria-modal="true">
+        <div class="lightbox-content">
+            <span class="lightbox-close" aria-label="Close lightbox">&times;</span>
+            <div class="lightbox-loading" role="status" aria-label="Loading image">Loading...</div>
+            <img class="lightbox-image" src="" alt="" aria-describedby="lightboxCaption" />
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <button class="lightbox-nav lightbox-prev" aria-label="Previous image">❮</button>
+            <button class="lightbox-nav lightbox-next" aria-label="Next image">❯</button>
+        </div>
     </div>
 
-    <main>
-        <section class="about-me">
-            <h2>About Me</h2>
+    <header role="banner">
+        <h1>AI Engineer's Journey</h1>
+        <p>Building AI-powered applications in the GauntletAI program</p>
+        <!-- Search container with improved accessibility -->
+        <div class="search-container" role="search">
+            <input type="text" 
+                   class="search-input" 
+                   placeholder="Search blog posts..." 
+                   aria-label="Search blog posts"
+                   id="searchInput">
+            <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+            <div class="search-results" id="searchResults" role="status" aria-live="polite"></div>
+        </div>
+    </header>
+
+    <div class="social-links" role="navigation" aria-label="Social media links">
+        <a href="https://github.com/rogerHuntGauntlet" target="_blank" rel="noopener" aria-label="Visit my GitHub profile">GitHub ⚡</a>
+        <a href="https://www.linkedin.com/in/rogerjgs404040/" target="_blank" rel="noopener" aria-label="Connect with me on LinkedIn">LinkedIn 🔗</a>
+        <a href="https://x.com/roger_jgs404040" target="_blank" rel="noopener" aria-label="Follow me on Twitter">Twitter 🐦</a>
+        <a href="https://ohfpartners.com" target="_blank" rel="noopener" aria-label="Visit OHF Partners website">OHF Partners 🏢</a>
+        <a href="https://calendly.com/roger-hunt-1" target="_blank" rel="noopener" aria-label="Schedule a meeting with me">Book a Meeting 📅</a>
+        <a href="#" onclick="showOverlay(); return false;" aria-label="Download OHFtok Android app">Download OHFtok (Android) 📱</a>
+    </div>
+
+    <main role="main">
+        <h1>AI Engineer's Journey</h1>
+        <p>Building AI-powered applications in the GauntletAI program</p>
+        
+        <section class="about-me" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
             <p>I'm an aspiring AI Engineer participating in the GauntletAI program, where I'm learning to build AI-powered applications at an incredible pace. Each week, I tackle new projects and share my experiences here.</p>
         </section>
 
-        <section class="blog-posts">
-            <h2>Blog Posts</h2>
-            
-            <article class="blog-post">
-                <h3>Saturday Brunch: Fueling the AI Revolution! 🍳</h3>
-                <div class="post-date">March 30, 2024</div>
-                <p>Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread. When you're working 100-hour weeks, you've got to make those breaks count!</p>
-
-                <div class="blog-images">
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-08 at 08.06.15_3967b4bf.jpg" alt="Delicious brunch spread" class="blog-image">
-                        <div class="image-caption">Saturday's epic brunch spread: Bacon and egg casserole, cinnamon roll casserole, and French toast casserole! 🍽️</div>
-                    </div>
-                </div>
-
-                <h4>Brunch of Champions 🏆</h4>
-                <p>Today's menu was nothing short of spectacular:</p>
-                <ul>
-                    <li>Savory bacon and egg casserole</li>
-                    <li>Sweet and gooey cinnamon roll casserole</li>
-                    <li>Decadent French toast casserole</li>
-                </ul>
-
-                <p>There's something special about sharing a meal with fellow developers who are all working towards the same goal. These moments of connection and relaxation are just as important as the intense coding sessions - they're where we recharge, share ideas, and build the relationships that make this journey so memorable.</p>
-
-                <h4>Back to Building! 💻</h4>
-                <p>With our batteries recharged and our bellies full, it's back to work on OHFtok! Haven't tried it yet? Download our Android app from the link in the header and join the revolution in social video! We can't wait to see what you'll create.</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>🎉 OHFtok Now Available for Download! 📱</h3>
-                <div class="post-date">March 29, 2024</div>
-                <p>The moment you've been waiting for is here! OHFtok, our AI-powered TikTok clone, is now available for download. We're starting with a direct APK release while the Play Store version is being finalized. Here's how you can get your hands on it:</p>
-
-                <h4>Download Instructions 📲</h4>
-                <ol style="list-style-type: decimal; padding-left: 20px;">
-                    <li>Download the APK from our <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">Google Drive link</a></li>
-                    <li>On your Android device:</li>
-                    <ul style="list-style-type: disc; padding-left: 20px;">
-                        <li>Enable "Install from unknown sources" in your device settings</li>
-                        <li>Open the downloaded APK</li>
-                        <li>Follow the installation prompts</li>
-                        <li>If you see a Play Protect warning, you can safely click "Install anyway" - this is our verified app!</li>
-                    </ul>
-                </ol>
-
-                <h4>Why Direct APK First? 🤔</h4>
-                <p>While we're working on the Play Store release, we wanted to get OHFtok into your hands as quickly as possible. This direct APK release lets our early adopters and beta testers start using the app immediately. Your feedback during this phase will be invaluable as we polish the app for its official store debut.</p>
-
-                <h4>What's Next? 🚀</h4>
-                <p>We're actively working on:</p>
-                <ul>
-                    <li>Finalizing the Play Store listing</li>
-                    <li>Gathering initial user feedback</li>
-                    <li>Preparing our first feature update</li>
-                    <li>Building our creator community</li>
-                </ul>
-
-                <p>Download OHFtok now and be among the first to experience the future of AI-powered social video! Don't forget to share your feedback - every comment helps us make the app even better. Let's create something amazing together! 🎥✨</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>Mission Accomplished: Android App Ready for Launch! 🎯</h3>
-                <div class="post-date">March 28, 2024</div>
-                <p>Remember that "impossible" TikTok clone challenge from last week? Well, guess what? We did it! 🎉 Our Android app is now fully built and deployed, ready to hit the Play Store. The release is tentatively scheduled for Monday, and I can barely contain my excitement!</p>
-
-                <div class="blog-images">
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-07 at 21.52.53_dc813d22.jpg" alt="Android app deployment celebration" class="blog-image">
-                        <div class="image-caption">Victory moment: Successfully deploying our TikTok clone to the Play Store! 🚀</div>
-                    </div>
-                </div>
-
-                <h4>From "Impossible" to "Done" in Days ⚡</h4>
-                <p>When we started this challenge last week, building and deploying a full TikTok clone in just a few days seemed like a moonshot. But here we are, with a fully functional app ready to go! This is exactly what Danielle Rios was talking about in her talk earlier this week - the power of AI-first development is completely rewriting what's possible in software development.</p>
-
-                <h4>Key Features We Nailed 🎯</h4>
-                <ul>
-                    <li>Smooth, infinite-scroll video feed that rivals the original</li>
-                    <li>AI-powered content recommendations</li>
-                    <li>Real-time video processing and compression</li>
-                    <li>Sleek, intuitive UI that users will love</li>
-                    <li>Rock-solid backend infrastructure ready to scale</li>
-                </ul>
-
-                <h4>The AI Advantage ⚡</h4>
-                <p>Building this app traditionally would have taken months, but leveraging AI tools and pair programming with AI accelerated our development speed exponentially. From UI design to backend architecture, AI was our constant companion, suggesting optimizations and helping us avoid common pitfalls.</p>
-
-                <h4>What's Next? 🎯</h4>
-                <p>While we're targeting Monday for the official release, we're using these final days to polish everything to perfection. The app store listing is being finalized, last-minute optimizations are being made, and we're already planning our next set of features. This isn't just a clone anymore - it's evolving into something uniquely ours.</p>
-
-                <p>Stay tuned for the official release announcement! This milestone is just the beginning of what's possible when you combine intensive focus, AI-first development, and the incredible energy of the GauntletAI program. As they say here - we're not just building apps, we're building the future! 🚀</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>Recap: TikTok App, AI Innovations, and the Gauntlet Journey</h3>
-                <div class="post-date">March 27, 2024</div>
-                <p>Over the last few days, our journey has taken an exhilarating turn. We now boast a fully functional TikTok clone, complete with project-based scrolling and a community-driven approach to collecting and sharing videos. But this isn't your ordinary clone; we're integrating plans for AI-powered features like video mashing and meme engines to transform the familiar doomscrolling experience into something creative and collaboratively engaging!</p>
-
-                <h4>Innovation on the Tech Front</h4>
-                <p>On the technical side, we're diving into the depths of Stable Diffusion and exploring complex mapping techniques to build next-level AI creation tools. Our ambition? To enable a powerful suite of AI functionality that redefines the way we interact with video content.</p>
-
-                <h4>Collaboration & Challenges</h4>
-                <p>Meetings have been buzzing with energy – we recently connected with the team from Windsurf, whose tool offers a fresh perspective similar to Cursor. There's even a hint of a hidden nitro button waiting to be discovered! Meanwhile, on my dev side, I'm stuck in versioning hell with Flutter/Android. I'm trying to guide the AI through the process instead of coding myself, and it's as frustrating as it sounds.</p>
-
-                <h4>Milestones & Exciting Prospects</h4>
-                <p>Amidst all of this, we achieved a major milestone: our domain <a href="https://is-a.dev" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">is-a.dev</a> has been approved! Adding to the excitement, we recently met with students from Alpha School in Austin. Their wildly innovative approach to education has them pitching creative, AI-first app ideas – and there's real potential for us to build some of these concepts!</p>
-
-                <p>And yes, while I didn't contribute any artwork myself (self-centered and not that talented), a huge shout-out to Abraham for his stellar illustration!</p>
-
-                <div class="blog-images">
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-07 at 10.12.36_eaf55337.jpg" alt="Gauntlet journey recap artwork by Abraham" class="blog-image">
-                        <div class="image-caption">Abraham's masterful artwork capturing our relentless pursuit of innovation.</div>
-                    </div>
-                </div>
-
-                <p>This journey is just getting started – every day brings a new challenge and opportunity. Stay tuned for more updates as we continue to push the boundaries of AI and community collaboration!</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>The Future is Now: Danielle Rios's Bold Vision for AI Education 🚀</h3>
-                <div class="post-date">March 26, 2024</div>
-                <p>"In five years, we won't be talking about 4-year CS degrees anymore." These powerful words from Danielle Rios sent shockwaves through the room today as she laid out her revolutionary vision for GauntletAI and the future of technology education. In a talk that felt more like a glimpse into the future, Rios challenged everything we thought we knew about learning computer science.</p>
-
-                <h4>100-Hour Weeks: The Price of Revolution 🔥</h4>
-                <p>When Rios spoke about GauntletAI's infamous 100-hour work weeks, you could feel the intensity in her voice. "This isn't about grinding," she emphasized, "it's about compression of time and acceleration of learning." In an AI-first world, where tools can multiply our productivity by 10x or even 100x, she argued that traditional educational timeframes are becoming obsolete. The program's intensity isn't just about quantity—it's about immersing yourself in the future before anyone else gets there.</p>
-
-                <h4>Disrupting the Ivory Tower 🏛️💥</h4>
-                <p>The most audacious part of Rios's vision? The claim that GauntletAI's 100-day program could replace what Stanford and MIT teach in 4 years. Here's why she believes it's possible:</p>
-                <ul>
-                    <li>Traditional CS theory is being revolutionized by AI—what took months to learn can now be mastered in days</li>
-                    <li>Real-world projects trump theoretical knowledge in an AI-first world</li>
-                    <li>The speed of technological change means shorter, more intensive learning cycles are more valuable</li>
-                    <li>AI tools are becoming so powerful that learning to leverage them effectively is more important than traditional programming</li>
-                </ul>
-
-                <h4>The Great Software Disruption 🌊</h4>
-                <p>But perhaps the most fascinating part of Rios's talk was her analysis of AI's impact on the broader technology landscape. "We're not just replacing developers," she declared, "we're replacing entire software businesses." She painted a picture of a near future where:</p>
-                <ul>
-                    <li>Legacy software companies will face unprecedented disruption from AI-first alternatives</li>
-                    <li>Small teams leveraging AI will outperform traditional companies with hundreds of developers</li>
-                    <li>The ability to work with AI will become more valuable than traditional coding skills</li>
-                    <li>New business models will emerge that were previously impossible without AI</li>
-                </ul>
-
-                <h4>Personal Reflection 💭</h4>
-                <p>Sitting in that room, watching Rios map out this bold future, I couldn't help but feel a mix of excitement and vertigo. We're not just learning to code differently—we're part of a movement that's redefining what's possible in technology. The 100-hour weeks suddenly make perfect sense: we're not just building software, we're racing to be part of the first wave of AI-native developers who will reshape the industry.</p>
-
-                <p>As Rios concluded her talk with a challenge to "build things that make today's impossible tomorrow's ordinary," I looked around the room and saw the same fire in everyone's eyes. We're not just here to learn—we're here to be part of a revolution. And if Rios is right (and I'm betting she is), the future belongs to those who can embrace this new paradigm first.</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>Landing in Austin: The In-Person Gauntlet Begins! 🚀</h3>
-                <div class="post-date">March 25, 2024</div>
-                <p>After completing my first month of Gauntlet AI virtually, I've touched down in Austin, Texas for the in-person phase of the program. The energy here is absolutely electric! I'm now surrounded by 120 talented developers, all pushing the boundaries of what's possible with AI.</p>
-
-                <div class="blog-images">
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-03 at 14.49.05_96dc7e0d.jpg" alt="Gauntlet AI group meeting" class="blog-image">
-                        <div class="image-caption">First day kickoff meeting with 120 developers ready to build the future</div>
-                    </div>
-                    
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-03 at 14.49.16_f6812d2a.jpg" alt="Poolside networking event" class="blog-image">
-                        <div class="image-caption">Networking by the pool - where great ideas and friendships form</div>
-                    </div>
-                    
-                    <div class="blog-image-container">
-                        <img src="assets/WhatsApp Image 2025-02-03 at 14.49.59_de504212.jpg" alt="Texas BBQ pit" class="blog-image">
-                        <div class="image-caption">Nothing beats Texas BBQ after a long day of coding!</div>
-                    </div>
-                </div>
-
-                <h4>Week 1 Challenge: Build a TikTok Clone in 5 Days</h4>
-                <p>Talk about hitting the ground running! On Monday, we were given what seems like an impossible task: build a complete TikTok clone and get it published in the app store by the end of the week. The timeline is absolutely ridiculous, but that's exactly what makes Gauntlet AI special - we're here to do the impossible!</p>
-
-                <h4>The Social Side of Coding</h4>
-                <p>Beyond the intense coding sessions, the program has been incredible for networking and building relationships. From poolside discussions about AI architecture to BBQ-fueled debugging sessions, the collaborative atmosphere here is unlike anything I've experienced before. Being surrounded by like-minded developers who are all pushing their limits is incredibly motivating.</p>
-
-                <p>Stay tuned for updates on our TikTok clone progress. Will we make it to the app store by Friday? Follow along to find out! 😅</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>Building Two Enterprise Apps in Four Weeks: OHF Partners Project</h3>
-                <div class="post-date">March 20, 2024</div>
-                <p>Just wrapped up an incredible month building two enterprise-level applications for 
-                   <a href="https://ohfpartners.com" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">OHF Partners</a>. 
-                   What's amazing? Each app took only two weeks to build! Here's what we accomplished:</p>
-
-                <h4>1. Slack-Style Communication Platform</h4>
-                <p>Built a fully functional Slack clone with:</p>
-                <ul>
-                    <li>User authentication and secure login system</li>
-                    <li>Real-time messaging capabilities</li>
-                    <li>Channel-based communication</li>
-                    <li>Modern, intuitive interface</li>
-                </ul>
-
-                <h4>2. AI-Powered Zendesk Alternative</h4>
-                <p>Created a business development platform packed with AI features:</p>
-                <ul>
-                    <li>Smart ticket management system</li>
-                    <li>AI-powered customer support automation</li>
-                    <li>Business intelligence tools</li>
-                    <li>Advanced analytics and reporting</li>
-                </ul>
-
-                <p>The speed at which we were able to develop these applications demonstrates the power of modern development tools and AI assistance. Both applications are now live and being used by real users, proving that rapid development doesn't mean compromising on quality.</p>
-
-                <p>Key takeaways from this experience:</p>
-                <ul>
-                    <li>Modern AI tools dramatically accelerate development speed</li>
-                    <li>Two weeks is enough time to build a production-ready app</li>
-                    <li>Enterprise-level features can be implemented rapidly with the right approach</li>
-                </ul>
-            </article>
-
-            <article class="blog-post">
-                <h3>Supercharging Development with Cursor.sh</h3>
-                <div class="post-date">March 19, 2024</div>
-                <p>As I dive into the world of AI-powered development, I've discovered an incredible tool that's revolutionizing how I code: Cursor.sh. This AI-powered code editor is changing the game for developers like me who are building applications rapidly.</p>
-                
-                <p>What makes Cursor special?</p>
-                <ul>
-                    <li>AI-powered code completion that actually understands context</li>
-                    <li>Natural language processing for code generation</li>
-                    <li>Intelligent code explanations and refactoring suggestions</li>
-                </ul>
-                
-                <p>I'm using Cursor to build applications in record time during my GauntletAI program. The ability to describe features in plain English and have the AI suggest implementation approaches has been game-changing.</p>
-                
-                <p>Want to follow my journey? Bookmark this site! I'll be posting weekly updates about my experiences building AI-powered applications, sharing insights, and discussing the tools and techniques I'm learning along the way.</p>
-            </article>
+        <section class="blog-posts" aria-labelledby="blog-heading">
+            <h2 id="blog-heading">Blog Posts</h2>
+            <div id="posts-container"></div>
+            <div id="loading-indicator" class="loading-indicator" role="status" aria-label="Loading posts">
+                <div class="spinner"></div>
+                <p>Loading posts...</p>
+            </div>
+            <button id="load-more" class="load-more-btn" aria-label="Load more posts">Load More Posts</button>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>✨ Check back weekly for new posts about my AI engineering journey! ✨</p>
     </footer>
 
     <script>
+        // Update theme toggle ARIA state
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update button text and ARIA state
+            themeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌑';
+            themeToggle.setAttribute('aria-checked', newTheme === 'dark');
+        });
+
         function showOverlay() {
             document.getElementById('downloadOverlay').style.display = 'flex';
         }
@@ -499,6 +693,432 @@
                 closeOverlay();
             }
         });
+
+        // Image Lightbox functionality
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+        const lightboxNext = lightbox.querySelector('.lightbox-next');
+        const lightboxLoading = lightbox.querySelector('.lightbox-loading');
+
+        // Get all blog images
+        const blogImages = document.querySelectorAll('.blog-image');
+        let currentImageIndex = 0;
+
+        // Add click event to all blog images
+        blogImages.forEach((img, index) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                showLightbox(img);
+            });
+        });
+
+        function showLightbox(img) {
+            // Show loading indicator
+            lightboxLoading.style.display = 'block';
+            lightboxImage.style.display = 'none';
+
+            // Load the image
+            lightboxImage.src = img.src;
+            lightboxCaption.textContent = img.nextElementSibling?.textContent || img.alt;
+            lightbox.style.display = 'flex';
+
+            // Hide loading indicator once image is loaded
+            lightboxImage.onload = () => {
+                lightboxLoading.style.display = 'none';
+                lightboxImage.style.display = 'block';
+            };
+
+            // Update navigation visibility
+            updateNavigation();
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            lightboxImage.src = '';
+        }
+
+        function showPrevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                showLightbox(blogImages[currentImageIndex]);
+            }
+        }
+
+        function showNextImage() {
+            if (currentImageIndex < blogImages.length - 1) {
+                currentImageIndex++;
+                showLightbox(blogImages[currentImageIndex]);
+            }
+        }
+
+        function updateNavigation() {
+            lightboxPrev.style.display = currentImageIndex > 0 ? 'block' : 'none';
+            lightboxNext.style.display = currentImageIndex < blogImages.length - 1 ? 'block' : 'none';
+        }
+
+        // Event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        lightboxPrev.addEventListener('click', showPrevImage);
+        lightboxNext.addEventListener('click', showNextImage);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrevImage();
+                if (e.key === 'ArrowRight') showNextImage();
+            }
+        });
+
+        // Touch gestures
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchEndX - touchStartX;
+
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    showPrevImage();
+                } else {
+                    showNextImage();
+                }
+            }
+        }
+
+        // Add lazy loading observer
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (!img.src && img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.add('loading');
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+
+        // Observe all blog images
+        document.querySelectorAll('.blog-image').forEach(img => {
+            if (img.src) {
+                img.classList.add('loading');
+            }
+            imageObserver.observe(img);
+        });
+
+        // Function to handle image load completion
+        function handleImageLoad(img) {
+            img.classList.remove('loading');
+            const placeholder = img.previousElementSibling;
+            if (placeholder && placeholder.classList.contains('image-placeholder')) {
+                placeholder.style.display = 'none';
+            }
+        }
+
+        // Add load event listeners to all images
+        document.querySelectorAll('.blog-image').forEach(img => {
+            if (img.complete) {
+                handleImageLoad(img);
+            } else {
+                img.addEventListener('load', () => handleImageLoad(img));
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+        const searchResults = document.getElementById('searchResults');
+        const blogPosts = document.querySelectorAll('.blog-post');
+        let searchTimeout;
+
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            let matchCount = 0;
+            
+            // Show/hide clear button
+            searchClear.style.display = query ? 'block' : 'none';
+
+            if (!query) {
+                // Reset everything if search is empty
+                blogPosts.forEach(post => {
+                    post.classList.remove('hidden');
+                    removeHighlights(post);
+                });
+                searchResults.textContent = '';
+                return;
+            }
+
+            blogPosts.forEach(post => {
+                const title = post.querySelector('h2').textContent.toLowerCase();
+                const content = post.textContent.toLowerCase();
+                const isMatch = title.includes(query) || content.includes(query);
+
+                post.classList.toggle('hidden', !isMatch);
+                
+                if (isMatch) {
+                    matchCount++;
+                    highlightMatches(post, query);
+                } else {
+                    removeHighlights(post);
+                }
+            });
+
+            // Update results message
+            searchResults.textContent = query ? 
+                `Found ${matchCount} ${matchCount === 1 ? 'post' : 'posts'} matching "${query}"` : '';
+        }
+
+        function highlightMatches(element, query) {
+            removeHighlights(element);
+            
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const nodesToHighlight = [];
+            while (walker.nextNode()) {
+                const node = walker.currentNode;
+                const text = node.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    nodesToHighlight.push(node);
+                }
+            }
+
+            nodesToHighlight.forEach(node => {
+                const span = document.createElement('span');
+                const regex = new RegExp(`(${query})`, 'gi');
+                span.innerHTML = node.textContent.replace(regex, '<span class="highlight">$1</span>');
+                node.parentNode.replaceChild(span, node);
+            });
+        }
+
+        function removeHighlights(element) {
+            const highlights = element.querySelectorAll('.highlight');
+            highlights.forEach(highlight => {
+                const parent = highlight.parentNode;
+                parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+                // Clean up nested spans
+                if (parent.nodeName === 'SPAN' && parent.childNodes.length === 1) {
+                    parent.parentNode.replaceChild(document.createTextNode(parent.textContent), parent);
+                }
+            });
+        }
+
+        // Event listeners for search
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(performSearch, 300); // Debounce search
+        });
+
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            performSearch();
+            searchInput.focus();
+        });
+
+        // Clear search on Escape key
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchInput.value = '';
+                performSearch();
+                searchInput.blur();
+            }
+        });
+
+        // Back to top functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        // Show button when page is scrolled
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll to top when clicked
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Disqus configuration
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+        };
+        
+        // Load Disqus
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://ai-engineer-journey.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+        // Function to load comment counts
+        function loadCommentCounts() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://ai-engineer-journey.disqus.com/count.js';
+            s.id = 'dsq-count-scr';
+            (d.head || d.body).appendChild(s);
+        }
+
+        // Load comment counts when page loads
+        window.addEventListener('load', loadCommentCounts);
+
+        // Dynamic content loading
+        let currentPage = 1;
+        const postsContainer = document.getElementById('posts-container');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const loadMoreBtn = document.getElementById('load-more');
+        let isLoading = false;
+
+        async function loadPosts(page = 1) {
+            if (isLoading) return;
+            
+            isLoading = true;
+            loadingIndicator.style.display = 'block';
+            loadMoreBtn.style.display = 'none';
+
+            try {
+                const response = await fetch(`/data/blog-posts.json?page=${page}`);
+                if (!response.ok) throw new Error('Failed to load posts');
+                
+                const data = await response.json();
+                
+                // Render posts
+                data.posts.forEach(post => {
+                    const postElement = createPostElement(post);
+                    postsContainer.appendChild(postElement);
+                });
+
+                // Update pagination
+                currentPage = page;
+                if (currentPage * data.pagination.per_page < data.pagination.total_posts) {
+                    loadMoreBtn.style.display = 'block';
+                }
+
+                // Initialize lightbox for new images
+                initializeLightboxForNewImages();
+                
+            } catch (error) {
+                showError('Failed to load posts. Please try again later.');
+                console.error('Error loading posts:', error);
+            } finally {
+                isLoading = false;
+                loadingIndicator.style.display = 'none';
+            }
+        }
+
+        function createPostElement(post) {
+            const article = document.createElement('article');
+            article.className = 'blog-post';
+            
+            let imagesHtml = '';
+            if (post.images && post.images.length > 0) {
+                imagesHtml = `
+                    <div class="blog-images">
+                        ${post.images.map(img => `
+                            <div class="blog-image-container">
+                                <div class="image-placeholder">Loading image...</div>
+                                <img src="${img.src}" 
+                                     alt="${img.alt}" 
+                                     class="blog-image loading" 
+                                     loading="lazy"
+                                     width="800"
+                                     height="600"
+                                     onload="this.classList.remove('loading'); this.previousElementSibling.style.display='none';">
+                                <div class="image-caption">${img.caption}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            let sectionsHtml = '';
+            if (post.sections && post.sections.length > 0) {
+                sectionsHtml = post.sections.map(section => `
+                    <h3>${section.title}</h3>
+                    <p>${section.content}</p>
+                    ${section.list ? `
+                        <ul>
+                            ${section.list.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    ` : ''}
+                `).join('');
+            }
+
+            article.innerHTML = `
+                <h2>${post.title}</h2>
+                <div class="post-date">${post.date}</div>
+                <p>${post.content}</p>
+                ${imagesHtml}
+                ${sectionsHtml}
+                <div class="comments-section">
+                    <h3>Comments</h3>
+                    <div id="disqus_thread"></div>
+                </div>
+            `;
+
+            return article;
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            postsContainer.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
+
+        function initializeLightboxForNewImages() {
+            const newImages = postsContainer.querySelectorAll('.blog-image:not([data-lightbox-initialized])');
+            newImages.forEach((img, index) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => {
+                    currentImageIndex = Array.from(blogImages).indexOf(img);
+                    showLightbox(img);
+                });
+                img.setAttribute('data-lightbox-initialized', 'true');
+            });
+        }
+
+        // Event listeners
+        loadMoreBtn.addEventListener('click', () => loadPosts(currentPage + 1));
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => loadPosts());
     </script>
 </body>
 </html> 
