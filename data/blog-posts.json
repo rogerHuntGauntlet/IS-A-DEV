@@ -4,6 +4,7 @@
       "id": "saturday-brunch",
       "title": "Saturday Brunch: Fueling the AI Revolution! 🍳",
       "date": "March 30, 2024",
+      "category": "events",
       "summary": "Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread.",
       "content": "Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread. When you're working 100-hour weeks, you've got to make those breaks count!",
       "images": [
@@ -33,6 +34,7 @@
       "id": "ohftok-download",
       "title": "🎉 OHFtok Now Available for Download! 📱",
       "date": "March 29, 2024",
+      "category": "projects",
       "content": "The moment you've been waiting for is here! OHFtok, our AI-powered TikTok clone, is now available for download. We're starting with a direct APK release while the Play Store version is being finalized.",
       "sections": [
         {
@@ -66,6 +68,7 @@
       "id": "mission-accomplished",
       "title": "Mission Accomplished: Android App Ready for Launch! 🎯",
       "date": "March 28, 2024",
+      "category": "development",
       "content": "Remember that \"impossible\" TikTok clone challenge from last week? Well, guess what? We did it! 🎉 Our Android app is now fully built and deployed, ready to hit the Play Store. The release is tentatively scheduled for Monday, and I can barely contain my excitement!",
       "images": [
         {
@@ -100,6 +103,7 @@
       "id": "tiktok-app-recap",
       "title": "Recap: TikTok App, AI Innovations, and the Gauntlet Journey",
       "date": "March 27, 2024",
+      "category": "ai",
       "content": "Over the last few days, our journey has taken an exhilarating turn. We now boast a fully functional TikTok clone, complete with project-based scrolling and a community-driven approach to collecting and sharing videos. But this isn't your ordinary clone; we're integrating plans for AI-powered features like video mashing and meme engines to transform the familiar doomscrolling experience into something creative and collaboratively engaging!",
       "images": [
         {
@@ -127,6 +131,7 @@
       "id": "danielle-rios-vision",
       "title": "The Future is Now: Danielle Rios's Bold Vision for AI Education 🚀",
       "date": "March 26, 2024",
+      "category": "gauntlet",
       "content": "\"In five years, we won't be talking about 4-year CS degrees anymore.\" These powerful words from Danielle Rios sent shockwaves through the room today as she laid out her revolutionary vision for GauntletAI and the future of technology education. In a talk that felt more like a glimpse into the future, Rios challenged everything we thought we knew about learning computer science.",
       "sections": [
         {
@@ -149,6 +154,7 @@
       "id": "landing-in-austin",
       "title": "Landing in Austin: The In-Person Gauntlet Begins! 🚀",
       "date": "March 25, 2024",
+      "category": "gauntlet",
       "content": "After completing my first month of Gauntlet AI virtually, I've touched down in Austin, Texas for the in-person phase of the program. The energy here is absolutely electric! I'm now surrounded by 120 talented developers, all pushing the boundaries of what's possible with AI.",
       "images": [
         {
@@ -182,6 +188,7 @@
       "id": "enterprise-apps",
       "title": "Building Two Enterprise Apps in Four Weeks: OHF Partners Project",
       "date": "March 20, 2024",
+      "category": "development",
       "content": "Just wrapped up an incredible month building two enterprise-level applications for OHF Partners. What's amazing? Each app took only two weeks to build!",
       "sections": [
         {
@@ -219,6 +226,7 @@
       "id": "cursor-development",
       "title": "Supercharging Development with Cursor.sh",
       "date": "March 19, 2024",
+      "category": "development",
       "content": "As I dive into the world of AI-powered development, I've discovered an incredible tool that's revolutionizing how I code: Cursor.sh. This AI-powered code editor is changing the game for developers like me who are building applications rapidly.",
       "sections": [
         {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>AI Engineer's Journey</title>
+    <link>https://is-a.dev</link>
+    <description>Follow my journey as an AI Engineer in the GauntletAI program, building cutting-edge AI-powered applications and sharing insights along the way.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Mar 2024 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://is-a.dev/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+        <title>Saturday Brunch: Fueling the AI Revolution! 🍳</title>
+        <link>https://is-a.dev/posts/saturday-brunch</link>
+        <guid>https://is-a.dev/posts/saturday-brunch</guid>
+        <pubDate>Sat, 30 Mar 2024 08:00:00 GMT</pubDate>
+        <description><![CDATA[Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread. When you're working 100-hour weeks, you've got to make those breaks count!]]></description>
+    </item>
+
+    <item>
+        <title>🎉 OHFtok Now Available for Download! 📱</title>
+        <link>https://is-a.dev/posts/ohftok-download</link>
+        <guid>https://is-a.dev/posts/ohftok-download</guid>
+        <pubDate>Fri, 29 Mar 2024 15:00:00 GMT</pubDate>
+        <description><![CDATA[The moment you've been waiting for is here! OHFtok, our AI-powered TikTok clone, is now available for download. We're starting with a direct APK release while the Play Store version is being finalized.]]></description>
+    </item>
+
+    <item>
+        <title>Mission Accomplished: Android App Ready for Launch! 🎯</title>
+        <link>https://is-a.dev/posts/mission-accomplished</link>
+        <guid>https://is-a.dev/posts/mission-accomplished</guid>
+        <pubDate>Thu, 28 Mar 2024 18:00:00 GMT</pubDate>
+        <description><![CDATA[Remember that "impossible" TikTok clone challenge from last week? Well, guess what? We did it! 🎉 Our Android app is now fully built and deployed, ready to hit the Play Store. The release is tentatively scheduled for Monday, and I can barely contain my excitement!]]></description>
+    </item>
+
+    <item>
+        <title>Recap: TikTok App, AI Innovations, and the Gauntlet Journey</title>
+        <link>https://is-a.dev/posts/tiktok-app-recap</link>
+        <guid>https://is-a.dev/posts/tiktok-app-recap</guid>
+        <pubDate>Wed, 27 Mar 2024 14:00:00 GMT</pubDate>
+        <description><![CDATA[Over the last few days, our journey has taken an exhilarating turn. We now boast a fully functional TikTok clone, complete with project-based scrolling and a community-driven approach to collecting and sharing videos.]]></description>
+    </item>
+
+    <item>
+        <title>The Future is Now: Danielle Rios's Bold Vision for AI Education 🚀</title>
+        <link>https://is-a.dev/posts/danielle-rios-vision</link>
+        <guid>https://is-a.dev/posts/danielle-rios-vision</guid>
+        <pubDate>Tue, 26 Mar 2024 16:00:00 GMT</pubDate>
+        <description><![CDATA["In five years, we won't be talking about 4-year CS degrees anymore." These powerful words from Danielle Rios sent shockwaves through the room today as she laid out her revolutionary vision for GauntletAI and the future of technology education.]]></description>
+    </item>
+
+    <item>
+        <title>Landing in Austin: The In-Person Gauntlet Begins! 🚀</title>
+        <link>https://is-a.dev/posts/landing-in-austin</link>
+        <guid>https://is-a.dev/posts/landing-in-austin</guid>
+        <pubDate>Mon, 25 Mar 2024 10:00:00 GMT</pubDate>
+        <description><![CDATA[After completing my first month of Gauntlet AI virtually, I've touched down in Austin, Texas for the in-person phase of the program. The energy here is absolutely electric! I'm now surrounded by 120 talented developers, all pushing the boundaries of what's possible with AI.]]></description>
+    </item>
+
+    <item>
+        <title>Building Two Enterprise Apps in Four Weeks: OHF Partners Project</title>
+        <link>https://is-a.dev/posts/enterprise-apps</link>
+        <guid>https://is-a.dev/posts/enterprise-apps</guid>
+        <pubDate>Wed, 20 Mar 2024 09:00:00 GMT</pubDate>
+        <description><![CDATA[Just wrapped up an incredible month building two enterprise-level applications for OHF Partners. What's amazing? Each app took only two weeks to build!]]></description>
+    </item>
+
+    <item>
+        <title>Supercharging Development with Cursor.sh</title>
+        <link>https://is-a.dev/posts/cursor-development</link>
+        <guid>https://is-a.dev/posts/cursor-development</guid>
+        <pubDate>Tue, 19 Mar 2024 11:00:00 GMT</pubDate>
+        <description><![CDATA[As I dive into the world of AI-powered development, I've discovered an incredible tool that's revolutionizing how I code: Cursor.sh. This AI-powered code editor is changing the game for developers like me who are building applications rapidly.]]></description>
+    </item>
+</channel>
+</rss> 
