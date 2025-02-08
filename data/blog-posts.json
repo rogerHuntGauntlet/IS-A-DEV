@@ -28,11 +28,214 @@
           "content": "With our batteries recharged and our bellies full, it's back to work on OHFtok! Haven't tried it yet? Download our Android app from the link in the header and join the revolution in social video! We can't wait to see what you'll create."
         }
       ]
+    },
+    {
+      "id": "ohftok-download",
+      "title": "🎉 OHFtok Now Available for Download! 📱",
+      "date": "March 29, 2024",
+      "content": "The moment you've been waiting for is here! OHFtok, our AI-powered TikTok clone, is now available for download. We're starting with a direct APK release while the Play Store version is being finalized.",
+      "sections": [
+        {
+          "title": "Download Instructions 📲",
+          "content": "Here's how you can get your hands on it:",
+          "list": [
+            "Download the APK from our Google Drive link",
+            "Enable \"Install from unknown sources\" in your device settings",
+            "Open the downloaded APK",
+            "Follow the installation prompts",
+            "If you see a Play Protect warning, you can safely click \"Install anyway\" - this is our verified app!"
+          ]
+        },
+        {
+          "title": "Why Direct APK First? 🤔",
+          "content": "While we're working on the Play Store release, we wanted to get OHFtok into your hands as quickly as possible. This direct APK release lets our early adopters and beta testers start using the app immediately. Your feedback during this phase will be invaluable as we polish the app for its official store debut."
+        },
+        {
+          "title": "What's Next? 🚀",
+          "content": "We're actively working on:",
+          "list": [
+            "Finalizing the Play Store listing",
+            "Gathering initial user feedback",
+            "Preparing our first feature update",
+            "Building our creator community"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mission-accomplished",
+      "title": "Mission Accomplished: Android App Ready for Launch! 🎯",
+      "date": "March 28, 2024",
+      "content": "Remember that \"impossible\" TikTok clone challenge from last week? Well, guess what? We did it! 🎉 Our Android app is now fully built and deployed, ready to hit the Play Store. The release is tentatively scheduled for Monday, and I can barely contain my excitement!",
+      "images": [
+        {
+          "src": "assets/WhatsApp Image 2025-02-07 at 21.52.53_dc813d22.jpg",
+          "alt": "Team celebration photo showing developers gathered around computer screens displaying the successful deployment of OHFtok app to the Play Store",
+          "caption": "Victory moment: Successfully deploying our TikTok clone to the Play Store! 🚀"
+        }
+      ],
+      "sections": [
+        {
+          "title": "From \"Impossible\" to \"Done\" in Days ⚡",
+          "content": "When we started this challenge last week, building and deploying a full TikTok clone in just a few days seemed like a moonshot. But here we are, with a fully functional app ready to go! This is exactly what Danielle Rios was talking about in her talk earlier this week - the power of AI-first development is completely rewriting what's possible in software development."
+        },
+        {
+          "title": "Key Features We Nailed 🎯",
+          "content": "Here's what we accomplished:",
+          "list": [
+            "Smooth, infinite-scroll video feed that rivals the original",
+            "AI-powered content recommendations",
+            "Real-time video processing and compression",
+            "Sleek, intuitive UI that users will love",
+            "Rock-solid backend infrastructure ready to scale"
+          ]
+        },
+        {
+          "title": "The AI Advantage ⚡",
+          "content": "Building this app traditionally would have taken months, but leveraging AI tools and pair programming with AI accelerated our development speed exponentially. From UI design to backend architecture, AI was our constant companion, suggesting optimizations and helping us avoid common pitfalls."
+        }
+      ]
+    },
+    {
+      "id": "tiktok-app-recap",
+      "title": "Recap: TikTok App, AI Innovations, and the Gauntlet Journey",
+      "date": "March 27, 2024",
+      "content": "Over the last few days, our journey has taken an exhilarating turn. We now boast a fully functional TikTok clone, complete with project-based scrolling and a community-driven approach to collecting and sharing videos. But this isn't your ordinary clone; we're integrating plans for AI-powered features like video mashing and meme engines to transform the familiar doomscrolling experience into something creative and collaboratively engaging!",
+      "images": [
+        {
+          "src": "assets/WhatsApp Image 2025-02-07 at 10.12.36_eaf55337.jpg",
+          "alt": "Creative illustration by Abraham depicting the journey through GauntletAI program, showing abstract representations of AI development and innovation",
+          "caption": "Abraham's masterful artwork capturing our relentless pursuit of innovation."
+        }
+      ],
+      "sections": [
+        {
+          "title": "Innovation on the Tech Front",
+          "content": "On the technical side, we're diving into the depths of Stable Diffusion and exploring complex mapping techniques to build next-level AI creation tools. Our ambition? To enable a powerful suite of AI functionality that redefines the way we interact with video content."
+        },
+        {
+          "title": "Collaboration & Challenges",
+          "content": "Meetings have been buzzing with energy – we recently connected with the team from Windsurf, whose tool offers a fresh perspective similar to Cursor. There's even a hint of a hidden nitro button waiting to be discovered! Meanwhile, on my dev side, I'm stuck in versioning hell with Flutter/Android. I'm trying to guide the AI through the process instead of coding myself, and it's as frustrating as it sounds."
+        },
+        {
+          "title": "Milestones & Exciting Prospects",
+          "content": "Amidst all of this, we achieved a major milestone: our domain is-a.dev has been approved! Adding to the excitement, we recently met with students from Alpha School in Austin. Their wildly innovative approach to education has them pitching creative, AI-first app ideas – and there's real potential for us to build some of these concepts!"
+        }
+      ]
+    },
+    {
+      "id": "danielle-rios-vision",
+      "title": "The Future is Now: Danielle Rios's Bold Vision for AI Education 🚀",
+      "date": "March 26, 2024",
+      "content": "\"In five years, we won't be talking about 4-year CS degrees anymore.\" These powerful words from Danielle Rios sent shockwaves through the room today as she laid out her revolutionary vision for GauntletAI and the future of technology education. In a talk that felt more like a glimpse into the future, Rios challenged everything we thought we knew about learning computer science.",
+      "sections": [
+        {
+          "title": "100-Hour Weeks: The Price of Revolution 🔥",
+          "content": "When Rios spoke about GauntletAI's infamous 100-hour work weeks, you could feel the intensity in her voice. \"This isn't about grinding,\" she emphasized, \"it's about compression of time and acceleration of learning.\" In an AI-first world, where tools can multiply our productivity by 10x or even 100x, she argued that traditional educational timeframes are becoming obsolete. The program's intensity isn't just about quantity—it's about immersing yourself in the future before anyone else gets there."
+        },
+        {
+          "title": "Disrupting the Ivory Tower 🏛️💥",
+          "content": "The most audacious part of Rios's vision? The claim that GauntletAI's 100-day program could replace what Stanford and MIT teach in 4 years. Here's why she believes it's possible:",
+          "list": [
+            "Traditional CS theory is being revolutionized by AI—what took months to learn can now be mastered in days",
+            "Real-world projects trump theoretical knowledge in an AI-first world",
+            "The speed of technological change means shorter, more intensive learning cycles are more valuable",
+            "AI tools are becoming so powerful that learning to leverage them effectively is more important than traditional programming"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landing-in-austin",
+      "title": "Landing in Austin: The In-Person Gauntlet Begins! 🚀",
+      "date": "March 25, 2024",
+      "content": "After completing my first month of Gauntlet AI virtually, I've touched down in Austin, Texas for the in-person phase of the program. The energy here is absolutely electric! I'm now surrounded by 120 talented developers, all pushing the boundaries of what's possible with AI.",
+      "images": [
+        {
+          "src": "assets/WhatsApp Image 2025-02-03 at 14.49.05_96dc7e0d.jpg",
+          "alt": "Large conference room filled with 120 enthusiastic developers during the GauntletAI program kickoff meeting, showing diverse group engaged in discussion",
+          "caption": "First day kickoff meeting with 120 developers ready to build the future"
+        },
+        {
+          "src": "assets/WhatsApp Image 2025-02-03 at 14.49.16_f6812d2a.jpg",
+          "alt": "Developers engaged in informal networking discussions by a modern pool area, showcasing the relaxed yet productive atmosphere of the program",
+          "caption": "Networking by the pool - where great ideas and friendships form"
+        },
+        {
+          "src": "assets/WhatsApp Image 2025-02-03 at 14.49.59_de504212.jpg",
+          "alt": "Traditional Texas BBQ pit with smoking meats, surrounded by developers taking a well-deserved break from coding",
+          "caption": "Nothing beats Texas BBQ after a long day of coding!"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Week 1 Challenge: Build a TikTok Clone in 5 Days",
+          "content": "Talk about hitting the ground running! On Monday, we were given what seems like an impossible task: build a complete TikTok clone and get it published in the app store by the end of the week. The timeline is absolutely ridiculous, but that's exactly what makes Gauntlet AI special - we're here to do the impossible!"
+        },
+        {
+          "title": "The Social Side of Coding",
+          "content": "Beyond the intense coding sessions, the program has been incredible for networking and building relationships. From poolside discussions about AI architecture to BBQ-fueled debugging sessions, the collaborative atmosphere here is unlike anything I've experienced before. Being surrounded by like-minded developers who are all pushing their limits is incredibly motivating."
+        }
+      ]
+    },
+    {
+      "id": "enterprise-apps",
+      "title": "Building Two Enterprise Apps in Four Weeks: OHF Partners Project",
+      "date": "March 20, 2024",
+      "content": "Just wrapped up an incredible month building two enterprise-level applications for OHF Partners. What's amazing? Each app took only two weeks to build!",
+      "sections": [
+        {
+          "title": "1. Slack-Style Communication Platform",
+          "content": "Built a fully functional Slack clone with:",
+          "list": [
+            "User authentication and secure login system",
+            "Real-time messaging capabilities",
+            "Channel-based communication",
+            "Modern, intuitive interface"
+          ]
+        },
+        {
+          "title": "2. AI-Powered Zendesk Alternative",
+          "content": "Created a business development platform packed with AI features:",
+          "list": [
+            "Smart ticket management system",
+            "AI-powered customer support automation",
+            "Business intelligence tools",
+            "Advanced analytics and reporting"
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "content": "The speed at which we were able to develop these applications demonstrates the power of modern development tools and AI assistance. Both applications are now live and being used by real users, proving that rapid development doesn't mean compromising on quality.",
+          "list": [
+            "Modern AI tools dramatically accelerate development speed",
+            "Two weeks is enough time to build a production-ready app",
+            "Enterprise-level features can be implemented rapidly with the right approach"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cursor-development",
+      "title": "Supercharging Development with Cursor.sh",
+      "date": "March 19, 2024",
+      "content": "As I dive into the world of AI-powered development, I've discovered an incredible tool that's revolutionizing how I code: Cursor.sh. This AI-powered code editor is changing the game for developers like me who are building applications rapidly.",
+      "sections": [
+        {
+          "title": "What makes Cursor special?",
+          "content": "Here are the key features that set it apart:",
+          "list": [
+            "AI-powered code completion that actually understands context",
+            "Natural language processing for code generation",
+            "Intelligent code explanations and refactoring suggestions"
+          ]
+        }
+      ]
     }
   ],
   "pagination": {
     "page": 1,
     "per_page": 5,
-    "total_posts": 1
+    "total_posts": 8
   }
 } 
