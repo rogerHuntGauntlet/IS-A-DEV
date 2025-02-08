@@ -1,10 +1,62 @@
 // Search and filter functionality
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSearch();
+});
+
+function initializeSearch() {
+    const searchInput = document.querySelector('.search-input');
+    const clearButton = document.querySelector('.search-clear');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const contentFilter = document.getElementById('contentFilter');
+    const resetFiltersBtn = document.querySelector('.reset-filters-btn');
+    const activeFiltersContainer = document.querySelector('.active-filters');
+
+    if (!searchInput || !clearButton || !categoryFilter || !dateFilter || 
+        !contentFilter || !resetFiltersBtn || !activeFiltersContainer) {
+        console.warn('Some search elements are missing');
+        return;
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', () => {
+        clearButton.style.display = searchInput.value ? 'block' : 'none';
+        performSearch();
+    });
+
+    clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        clearButton.style.display = 'none';
+        performSearch();
+    });
+
+    categoryFilter.addEventListener('change', performSearch);
+    dateFilter.addEventListener('change', performSearch);
+    contentFilter.addEventListener('change', performSearch);
+
+    resetFiltersBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        categoryFilter.value = '';
+        dateFilter.value = '';
+        contentFilter.value = '';
+        clearButton.style.display = 'none';
+        performSearch();
+    });
+}
+
 function performSearch() {
-    const searchQuery = document.querySelector('.search-input').value.toLowerCase();
-    const categoryFilter = document.getElementById('categoryFilter').value;
-    const dateFilter = document.getElementById('dateFilter').value;
-    const contentFilter = document.getElementById('contentFilter').value;
+    const searchInput = document.querySelector('.search-input');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const contentFilter = document.getElementById('contentFilter');
     const posts = document.querySelectorAll('.blog-post');
+
+    if (!searchInput || !categoryFilter || !dateFilter || !contentFilter) return;
+
+    const searchQuery = searchInput.value.toLowerCase();
+    const category = categoryFilter.value;
+    const dateRange = dateFilter.value;
+    const contentType = contentFilter.value;
     let matchCount = 0;
 
     posts.forEach(post => {
@@ -21,19 +73,19 @@ function performSearch() {
         }
 
         // Apply category filter
-        if (categoryFilter && postCategory !== categoryFilter) {
+        if (category && postCategory !== category) {
             isVisible = false;
         }
 
         // Apply date filter
-        if (dateFilter && !isWithinDateRange(postDate, dateFilter)) {
+        if (dateRange && !isWithinDateRange(postDate, dateRange)) {
             isVisible = false;
         }
 
         // Apply content type filter
-        if (contentFilter) {
-            const shouldHidePost = (contentFilter === 'with-images' && !hasImage) || 
-                                 (contentFilter === 'without-images' && hasImage);
+        if (contentType) {
+            const shouldHidePost = (contentType === 'with-images' && !hasImage) || 
+                                 (contentType === 'without-images' && hasImage);
             if (shouldHidePost) {
                 isVisible = false;
             }
@@ -71,40 +123,46 @@ function isWithinDateRange(date, range) {
 
 function updateActiveFilters() {
     const activeFiltersContainer = document.querySelector('.active-filters');
-    activeFiltersContainer.innerHTML = '';
+    if (!activeFiltersContainer) return;
 
+    activeFiltersContainer.innerHTML = '';
     const activeFilters = [];
+
+    const searchInput = document.querySelector('.search-input');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const contentFilter = document.getElementById('contentFilter');
+
+    if (!searchInput || !categoryFilter || !dateFilter || !contentFilter) return;
     
-    // Check each filter
-    if (document.querySelector('.search-input').value) {
+    if (searchInput.value) {
         activeFilters.push({
             type: 'search',
-            value: document.querySelector('.search-input').value
+            value: searchInput.value
         });
     }
     
-    if (document.getElementById('categoryFilter').value) {
+    if (categoryFilter.value) {
         activeFilters.push({
             type: 'category',
-            value: getCategoryLabel(document.getElementById('categoryFilter').value)
+            value: getCategoryLabel(categoryFilter.value)
         });
     }
     
-    if (document.getElementById('dateFilter').value) {
+    if (dateFilter.value) {
         activeFilters.push({
             type: 'date',
-            value: document.getElementById('dateFilter').value
+            value: dateFilter.value
         });
     }
     
-    if (document.getElementById('contentFilter').value) {
+    if (contentFilter.value) {
         activeFilters.push({
             type: 'content',
-            value: document.getElementById('contentFilter').value
+            value: contentFilter.value
         });
     }
 
-    // Create filter tags
     activeFilters.forEach(filter => {
         const filterTag = document.createElement('span');
         filterTag.className = 'active-filter';
@@ -113,66 +171,66 @@ function updateActiveFilters() {
     });
 }
 
+function updateSearchResults(count) {
+    const searchResults = document.querySelector('.search-results');
+    if (!searchResults) return;
+
+    const searchInput = document.querySelector('.search-input');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const contentFilter = document.getElementById('contentFilter');
+
+    if (!searchInput || !categoryFilter || !dateFilter || !contentFilter) return;
+
+    let message = '';
+    if (count === 0) {
+        message = 'No posts found';
+    } else {
+        message = `Found ${count} ${count === 1 ? 'post' : 'posts'}`;
+        if (searchInput.value) {
+            message += ` matching "${searchInput.value}"`;
+        }
+        if (categoryFilter.value || dateFilter.value || contentFilter.value) {
+            message += ' with selected filters';
+        }
+    }
+    searchResults.textContent = message;
+}
+
 function clearFilter(filterType) {
+    const searchInput = document.querySelector('.search-input');
+    const searchClear = document.querySelector('.search-clear');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const contentFilter = document.getElementById('contentFilter');
+
+    if (!searchInput || !searchClear || !categoryFilter || !dateFilter || !contentFilter) return;
+
     switch (filterType) {
         case 'search':
-            document.querySelector('.search-input').value = '';
-            document.querySelector('.search-clear').style.display = 'none';
+            searchInput.value = '';
+            searchClear.style.display = 'none';
             break;
         case 'category':
-            document.getElementById('categoryFilter').value = '';
+            categoryFilter.value = '';
             break;
         case 'date':
-            document.getElementById('dateFilter').value = '';
+            dateFilter.value = '';
             break;
         case 'content':
-            document.getElementById('contentFilter').value = '';
+            contentFilter.value = '';
             break;
     }
     performSearch();
 }
 
 function getCategoryLabel(category) {
-    const categoryLabels = {
-        'events': 'Events',
-        'projects': 'Projects',
-        'development': 'Development',
-        'ai': 'AI & Machine Learning',
-        'gauntlet': 'Gauntlet Journey'
+    const labels = {
+        'development': '💻 Development',
+        'ai': '🤖 AI & ML',
+        'gauntlet': '⚡ Gauntlet Program',
+        'projects': '🚀 Projects',
+        'events': '📅 Events & Updates'
     };
-    return categoryLabels[category] || category;
-}
-
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.querySelector('.search-input');
-    const clearButton = document.querySelector('.search-clear');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const dateFilter = document.getElementById('dateFilter');
-    const contentFilter = document.getElementById('contentFilter');
-    const resetFiltersBtn = document.querySelector('.reset-filters-btn');
-
-    searchInput.addEventListener('input', () => {
-        clearButton.style.display = searchInput.value ? 'block' : 'none';
-        performSearch();
-    });
-
-    clearButton.addEventListener('click', () => {
-        searchInput.value = '';
-        clearButton.style.display = 'none';
-        performSearch();
-    });
-
-    categoryFilter.addEventListener('change', performSearch);
-    dateFilter.addEventListener('change', performSearch);
-    contentFilter.addEventListener('change', performSearch);
-
-    resetFiltersBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        categoryFilter.value = '';
-        dateFilter.value = '';
-        contentFilter.value = '';
-        clearButton.style.display = 'none';
-        performSearch();
-    });
-}); 
+    return labels[category] || category;
+} 
