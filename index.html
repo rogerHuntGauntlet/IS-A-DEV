@@ -139,9 +139,90 @@
             font-size: 0.9em;
             font-style: italic;
         }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .overlay-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .overlay-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .overlay-content ul {
+            margin-left: 40px;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #FF6B6B;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
+    <div id="downloadOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-overlay" onclick="closeOverlay()">&times;</span>
+            <h3>📱 OHFtok Download Instructions</h3>
+            <ol>
+                <li>Download the APK from the <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" class="download-btn" target="_blank">Google Drive link</a></li>
+                <li>On your Android device:
+                    <ul>
+                        <li>Enable "Install from unknown sources" in your device settings</li>
+                        <li>Open the downloaded APK</li>
+                        <li>Follow the installation prompts</li>
+                        <li>If you see a Play Protect warning, click "Install anyway" - this is our verified app!</li>
+                    </ul>
+                </li>
+            </ol>
+            <p style="color: #666; font-style: italic;">Note: OHFtok is currently available for Android devices only.</p>
+        </div>
+    </div>
+
     <header>
         <h1>AI Engineer's Journey</h1>
         <p>Building AI-powered applications in the GauntletAI program</p>
@@ -153,6 +234,7 @@
         <a href="https://x.com/roger_jgs404040" target="_blank">Twitter 🐦</a>
         <a href="https://ohfpartners.com" target="_blank">OHF Partners 🏢</a>
         <a href="https://calendly.com/roger-hunt-1" target="_blank">Book a Meeting 📅</a>
+        <a href="#" onclick="showOverlay(); return false;">Download OHFtok (Android) 📱</a>
     </div>
 
     <main>
@@ -164,6 +246,64 @@
         <section class="blog-posts">
             <h2>Blog Posts</h2>
             
+            <article class="blog-post">
+                <h3>Saturday Brunch: Fueling the AI Revolution! 🍳</h3>
+                <div class="post-date">March 30, 2024</div>
+                <p>Even AI engineers need to eat! This morning, we took a break from coding to enjoy an absolutely incredible brunch spread. When you're working 100-hour weeks, you've got to make those breaks count!</p>
+
+                <div class="blog-images">
+                    <div class="blog-image-container">
+                        <img src="assets/WhatsApp Image 2025-02-08 at 08.06.15_3967b4bf.jpg" alt="Delicious brunch spread" class="blog-image">
+                        <div class="image-caption">Saturday's epic brunch spread: Bacon and egg casserole, cinnamon roll casserole, and French toast casserole! 🍽️</div>
+                    </div>
+                </div>
+
+                <h4>Brunch of Champions 🏆</h4>
+                <p>Today's menu was nothing short of spectacular:</p>
+                <ul>
+                    <li>Savory bacon and egg casserole</li>
+                    <li>Sweet and gooey cinnamon roll casserole</li>
+                    <li>Decadent French toast casserole</li>
+                </ul>
+
+                <p>There's something special about sharing a meal with fellow developers who are all working towards the same goal. These moments of connection and relaxation are just as important as the intense coding sessions - they're where we recharge, share ideas, and build the relationships that make this journey so memorable.</p>
+
+                <h4>Back to Building! 💻</h4>
+                <p>With our batteries recharged and our bellies full, it's back to work on OHFtok! Haven't tried it yet? Download our Android app from the link in the header and join the revolution in social video! We can't wait to see what you'll create.</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>🎉 OHFtok Now Available for Download! 📱</h3>
+                <div class="post-date">March 29, 2024</div>
+                <p>The moment you've been waiting for is here! OHFtok, our AI-powered TikTok clone, is now available for download. We're starting with a direct APK release while the Play Store version is being finalized. Here's how you can get your hands on it:</p>
+
+                <h4>Download Instructions 📲</h4>
+                <ol style="list-style-type: decimal; padding-left: 20px;">
+                    <li>Download the APK from our <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">Google Drive link</a></li>
+                    <li>On your Android device:</li>
+                    <ul style="list-style-type: disc; padding-left: 20px;">
+                        <li>Enable "Install from unknown sources" in your device settings</li>
+                        <li>Open the downloaded APK</li>
+                        <li>Follow the installation prompts</li>
+                        <li>If you see a Play Protect warning, you can safely click "Install anyway" - this is our verified app!</li>
+                    </ul>
+                </ol>
+
+                <h4>Why Direct APK First? 🤔</h4>
+                <p>While we're working on the Play Store release, we wanted to get OHFtok into your hands as quickly as possible. This direct APK release lets our early adopters and beta testers start using the app immediately. Your feedback during this phase will be invaluable as we polish the app for its official store debut.</p>
+
+                <h4>What's Next? 🚀</h4>
+                <p>We're actively working on:</p>
+                <ul>
+                    <li>Finalizing the Play Store listing</li>
+                    <li>Gathering initial user feedback</li>
+                    <li>Preparing our first feature update</li>
+                    <li>Building our creator community</li>
+                </ul>
+
+                <p>Download OHFtok now and be among the first to experience the future of AI-powered social video! Don't forget to share your feedback - every comment helps us make the app even better. Let's create something amazing together! 🎥✨</p>
+            </article>
+
             <article class="blog-post">
                 <h3>Mission Accomplished: Android App Ready for Launch! 🎯</h3>
                 <div class="post-date">March 28, 2024</div>
@@ -343,5 +483,22 @@
     <footer>
         <p>✨ Check back weekly for new posts about my AI engineering journey! ✨</p>
     </footer>
+
+    <script>
+        function showOverlay() {
+            document.getElementById('downloadOverlay').style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            document.getElementById('downloadOverlay').style.display = 'none';
+        }
+
+        // Close overlay when clicking outside the content
+        document.getElementById('downloadOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeOverlay();
+            }
+        });
+    </script>
 </body>
 </html> 
