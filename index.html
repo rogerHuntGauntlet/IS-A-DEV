@@ -20,37 +20,70 @@
             overflow-x: hidden;
         }
 
+        .site-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .gif-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: none;
+        }
+
+        .gif-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .gif-slide.active {
+            opacity: 1;
+            display: block;
+        }
+
         body::before {
             content: '';
             position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(
-                from 0deg at 50% 50%,
-                #1a1a1a,
-                #2a4858,
-                #1f6582,
-                #2a4858,
-                #1a1a1a
-            );
-            animation: rotate 60s linear infinite;
-            z-index: -2;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(30px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
             z-index: -1;
+            pointer-events: none;
         }
 
         main {
             position: relative;
             z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .header-container {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 20px;
+            margin-top: 30px;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
         }
 
         .back-to-top {
@@ -114,60 +147,16 @@
             opacity: 1;
         }
 
-        .header-container {
-            position: relative;
-            margin-bottom: 50px;
-            padding: 20px;
-            margin-top: 30px;
-        }
-
         .header-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             overflow: hidden;
-            z-index: -1;
-        }
-
-        .gif-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .gif-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(3px);
-            display: none;
-        }
-
-        .gif-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gif-slide.active {
-            opacity: 1;
-            display: block;
+            z-index: 1;
         }
 
         .header-content {
@@ -175,7 +164,7 @@
             z-index: 2;
             padding: 40px 20px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
             backdrop-filter: blur(5px);
         }
@@ -548,6 +537,24 @@
     </style>
 </head>
 <body>
+    <div class="site-background">
+        <div class="gif-slide active">
+            <img src="assets/gifs/plane GIF.gif" alt="Plane Animation">
+        </div>
+        <div class="gif-slide">
+            <img src="assets/gifs/Fighter Jet Speed GIF by Safran.gif" alt="Fighter Jet Speed">
+        </div>
+        <div class="gif-slide">
+            <img src="assets/gifs/jump jet GIF.gif" alt="Jump Jet">
+        </div>
+        <div class="gif-slide">
+            <img src="assets/gifs/war space GIF.gif" alt="War Space">
+        </div>
+        <div class="gif-slide">
+            <img src="assets/gifs/War Thumbs Up GIF by Sony Pictures.gif" alt="War Thumbs Up">
+        </div>
+    </div>
+
     <div id="leftStars"></div>
     <div id="rightStars"></div>
 
@@ -556,7 +563,7 @@
             <span class="close-overlay" onclick="closeOverlay()">&times;</span>
             <h3>📱 OHFtok Download Instructions</h3>
             <ol>
-                <li>Download the APK from the <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" class="download-btn" target="_blank">Google Drive link</a></li>
+                <li>Download the APK from the <a href="https://drive.google.com/drive/folders/1UtGKOOogsZJnwRryzEGvEdJrkMC8BWWF?usp=sharing" class="download-btn" target="_blank">Google Drive folder</a></li>
                 <li>On your Android device:
                     <ul>
                         <li>Enable "Install from unknown sources" in your device settings</li>
@@ -592,23 +599,6 @@
     <div class="header-container">
         <div class="glowing-border"></div>
         <header>
-            <div class="gif-slideshow">
-                <div class="gif-slide active">
-                    <img src="assets/gifs/plane GIF.gif" alt="Plane Animation">
-                </div>
-                <div class="gif-slide">
-                    <img src="assets/gifs/Fighter Jet Speed GIF by Safran.gif" alt="Fighter Jet Speed">
-                </div>
-                <div class="gif-slide">
-                    <img src="assets/gifs/jump jet GIF.gif" alt="Jump Jet">
-                </div>
-                <div class="gif-slide">
-                    <img src="assets/gifs/war space GIF.gif" alt="War Space">
-                </div>
-                <div class="gif-slide">
-                    <img src="assets/gifs/War Thumbs Up GIF by Sony Pictures.gif" alt="War Thumbs Up">
-                </div>
-            </div>
             <div class="header-bg"></div>
             <div class="header-content">
                 <h1>AI Pilot</h1>
@@ -641,7 +631,7 @@
                 <div class="post-date">April 3, 2024</div>
                 
                 <h4>📱 OHFtok: New Version Released!</h4>
-                <p>We're excited to announce a new version of OHFtok is now available! We've been working hard to improve the app based on your feedback and add new features. Ready to try it out? <a href="https://drive.google.com/file/d/1C1uk0WJ2qSmw4CR1ipuknUhzqfWndFoP/view?usp=sharing" target="_blank">Download the latest version here</a>!</p>
+                <p>We're excited to announce a new version of OHFtok is now available! We've been working hard to improve the app based on your feedback and add new features. Ready to try it out? <a href="https://drive.google.com/drive/folders/1UtGKOOogsZJnwRryzEGvEdJrkMC8BWWF?usp=sharing" target="_blank">Download the latest version here</a>!</p>
 
                 <h4>🌟 Supporting Open Source</h4>
                 <p>We're proud to announce that we've made our first contribution to the open source community! We've submitted a pull request to the <a href="https://github.com/all-contributors" target="_blank">all-contributors</a> project, a fantastic initiative that helps recognize all types of contributions to open source projects, not just code. It's a small step in giving back to the community that powers so much of modern software development.</p>
@@ -785,7 +775,7 @@
 
                 <h4>Download Instructions 📲</h4>
                 <ol style="list-style-type: decimal; padding-left: 20px;">
-                    <li>Download the APK from our <a href="https://drive.google.com/file/d/1CQ__Xg_vV4AzPF489-rAtyYGRMKPBybf/view?usp=sharing" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">Google Drive link</a></li>
+                    <li>Download the APK from our <a href="https://drive.google.com/drive/folders/1UtGKOOogsZJnwRryzEGvEdJrkMC8BWWF?usp=sharing" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">Google Drive folder</a></li>
                     <li>On your Android device:</li>
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li>Enable "Install from unknown sources" in your device settings</li>
@@ -1102,19 +1092,32 @@
             const slides = document.querySelectorAll('.gif-slide');
             let currentSlide = 0;
             
+            // Hide all slides first
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            });
+            
             // Show first slide
+            slides[0].style.display = 'block';
             slides[0].classList.add('active');
             
             setInterval(() => {
                 // Hide current slide
                 slides[currentSlide].classList.remove('active');
+                setTimeout(() => {
+                    slides[currentSlide].style.display = 'none';
+                }, 1000);
                 
                 // Move to next slide
                 currentSlide = (currentSlide + 1) % slides.length;
                 
                 // Show new slide
-                slides[currentSlide].classList.add('active');
-            }, 3000); // Change slide every 3 seconds
+                slides[currentSlide].style.display = 'block';
+                setTimeout(() => {
+                    slides[currentSlide].classList.add('active');
+                }, 50);
+            }, 7000); // Change slide every 7 seconds
         }
 
         // Initialize slideshow when document is loaded
