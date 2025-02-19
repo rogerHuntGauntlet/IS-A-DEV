@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="An AI Pilot's Journey | Roger Hunt - GauntletAI Developer">
     <meta name="twitter:description" content="Follow the journey of an AI pilot in the GauntletAI program, building cutting-edge AI applications and revolutionizing video creation with OHFtok.">
     
-    <link rel="icon" type="image/gif" href="assets/favicon.gif">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAA==">
     <link rel="canonical" href="https://is-a.dev">
     
     <!-- JSON-LD Structured Data -->
@@ -1176,7 +1176,30 @@
         }
 
         // Initialize slideshow when document is loaded
-        document.addEventListener('DOMContentLoaded', initSlideshow);
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlideshow();
+            
+            // Pi symbol Easter egg
+            const piSymbol = document.createElement('div');
+            piSymbol.id = 'pi-symbol';
+            piSymbol.textContent = 'π';
+            piSymbol.style.position = 'fixed';
+            piSymbol.style.bottom = '20px';
+            piSymbol.style.left = '20px';
+            piSymbol.style.fontSize = '24px';
+            piSymbol.style.color = 'rgba(255, 255, 255, 0.5)';
+            piSymbol.style.cursor = 'default';
+            piSymbol.style.userSelect = 'none';
+            piSymbol.style.zIndex = '1000';
+            
+            document.body.appendChild(piSymbol);
+            
+            piSymbol.addEventListener('click', (e) => {
+                if (e.ctrlKey && e.shiftKey) {
+                    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                }
+            });
+        });
     </script>
 </body>
 </html> 
