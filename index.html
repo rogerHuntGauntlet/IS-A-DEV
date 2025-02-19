@@ -542,15 +542,6 @@
             <img src="assets/gifs/plane GIF.gif" alt="Plane Animation">
         </div>
         <div class="gif-slide">
-            <img src="assets/gifs/Fighter Jet Speed GIF by Safran.gif" alt="Fighter Jet Speed">
-        </div>
-        <div class="gif-slide">
-            <img src="assets/gifs/jump jet GIF.gif" alt="Jump Jet">
-        </div>
-        <div class="gif-slide">
-            <img src="assets/gifs/war space GIF.gif" alt="War Space">
-        </div>
-        <div class="gif-slide">
             <img src="assets/gifs/War Thumbs Up GIF by Sony Pictures.gif" alt="War Thumbs Up">
         </div>
     </div>
@@ -1056,37 +1047,6 @@
             const nextPost = findNextPost();
             nextPost.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-
-        // Shooting Stars functionality
-        function createShootingStar() {
-            const star = document.createElement('div');
-            star.className = 'shooting-star';
-            
-            // Random starting position
-            const startX = -100 + Math.random() * 200;
-            const startY = -100 + Math.random() * 200;
-            star.style.left = startX + 'px';
-            star.style.top = startY + 'px';
-            
-            document.body.appendChild(star);
-            
-            // Remove the star after animation
-            setTimeout(() => {
-                star.remove();
-            }, 1000);
-        }
-
-        // Create stars at regular intervals
-        function startShootingStars() {
-            // Create a star immediately
-            createShootingStar();
-            
-            // Create more stars every 500ms
-            setInterval(createShootingStar, 500);
-        }
-
-        // Start the shooting stars when the document is ready
-        document.addEventListener('DOMContentLoaded', startShootingStars);
 
         function initSlideshow() {
             const slides = document.querySelectorAll('.gif-slide');
