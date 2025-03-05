@@ -683,6 +683,28 @@
         </div>
     </div>
 
+    <div id="githubReposOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-overlay" onclick="closeGitHubReposOverlay()">&times;</span>
+            <h3>⚡ GitHub Repositories</h3>
+            <p>Check out my open-source projects and contributions:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin: 15px 0;">
+                    <a href="https://github.com/rogerHuntGauntlet/Rogers_Build_Guide.git" class="download-btn" target="_blank">AI Build Guide 🛠️</a>
+                    <p style="margin-top: 5px; color: #666;">Comprehensive system for bootstrapping new software projects with proper structure and AI guidance.</p>
+                </li>
+                <li style="margin: 15px 0;">
+                    <a href="https://github.com/rogerHuntGauntlet/final_review_gauntlet.git" class="download-btn" target="_blank">Gauntlet Project Reviews 📊</a>
+                    <p style="margin-top: 5px; color: #666;">Self-assessments and reviews from the six submitted Gauntlet AI program projects.</p>
+                </li>
+                <li style="margin: 15px 0;">
+                    <a href="https://github.com/rogerHuntGauntlet" class="download-btn" target="_blank">View All Repositories 📁</a>
+                    <p style="margin-top: 5px; color: #666;">Explore all my public repositories and contributions.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="header-container">
         <div class="glowing-border"></div>
         <header>
@@ -695,7 +717,7 @@
     </div>
 
     <div class="social-links">
-        <a href="https://github.com/rogerHuntGauntlet" target="_blank">GitHub ⚡</a>
+        <a href="#" onclick="showGitHubReposOverlay(); return false;">GitHub ⚡</a>
         <a href="https://www.linkedin.com/in/rogerjgs404040/" target="_blank">LinkedIn 🔗</a>
         <a href="https://x.com/roger_jgs404040" target="_blank">Twitter 🐦</a>
         <a href="https://ohfpartners.com" target="_blank">OHF Partners 🏢</a>
@@ -1182,6 +1204,14 @@
             document.getElementById('researchOverlay').style.display = 'none';
         }
 
+        function showGitHubReposOverlay() {
+            document.getElementById('githubReposOverlay').style.display = 'flex';
+        }
+
+        function closeGitHubReposOverlay() {
+            document.getElementById('githubReposOverlay').style.display = 'none';
+        }
+
         // Back to Top button functionality
         const backToTopButton = document.getElementById('backToTop');
         
@@ -1211,6 +1241,12 @@
         document.getElementById('researchOverlay').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeResearchOverlay();
+            }
+        });
+
+        document.getElementById('githubReposOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGitHubReposOverlay();
             }
         });
 
