@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
-Sitemap: https://is-a.dev/sitemap.xml 
+Allow: /blog/
+Allow: /book/
+
+Sitemap: https://is-a.dev/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 10
+
+# Prevent duplicate content
+Disallow: /blog/tags/
+Disallow: /blog/categories/
+Disallow: /search/
+Disallow: /admin/
+Disallow: /drafts/ 

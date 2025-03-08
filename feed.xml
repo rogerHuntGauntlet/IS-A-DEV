@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Roger Hunt - AI Innovation Hub</title>
+        <description>AI Engineering, Philosophy, and Healthcare Innovation</description>
+        <link>https://is-a.dev</link>
+        <atom:link href="https://is-a.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+        <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
+        <generator>Custom RSS Generator</generator>
+        
+        <item>
+            <title>New Book Release and Platform Launches!</title>
+            <description>
+                <![CDATA[
+                Announcing the release of 'Vibes and the Art of AI Engineering' on Amazon, plus the launch of Ludwitt.com for AI-powered philosophy exploration and IUICalc.org for fertility analysis.
+                
+                Key Highlights:
+                - New book: "Vibes and the Art of AI Engineering" now on Amazon
+                - Launch of Ludwitt.com: AI-powered philosophy platform
+                - Release of IUICalc.org: Fertility analysis and insights
+                ]]>
+            </description>
+            <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+            <link>https://is-a.dev/blog/2024/04/08/book-and-platform-launches</link>
+            <guid isPermaLink="true">https://is-a.dev/blog/2024/04/08/book-and-platform-launches</guid>
+            <category>AI Engineering</category>
+            <category>Book Launch</category>
+            <category>Platform Release</category>
+        </item>
+    </channel>
+</rss> 

@@ -710,6 +710,89 @@
             }
         }
     </style>
+
+    <!-- Analytics Integration -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
+
+    <!-- Newsletter Signup Integration -->
+    <script async src="https://platform.twitter.com/widgets.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+    <!-- Social Proof -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Roger Hunt - AI Innovation Hub",
+      "url": "https://is-a.dev",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://is-a.dev/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://github.com/rogerHuntGauntlet",
+        "https://www.linkedin.com/in/rogerjgs404040/",
+        "https://x.com/roger_jgs404040"
+      ]
+    }
+    </script>
+
+    <!-- Enhanced Book Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Vibes and the Art of AI Engineering",
+      "author": {
+        "@type": "Person",
+        "name": "Roger Hunt",
+        "sameAs": [
+          "https://github.com/rogerHuntGauntlet",
+          "https://www.linkedin.com/in/rogerjgs404040/"
+        ]
+      },
+      "url": "https://www.amazon.com/dp/B0DZTTXF6M",
+      "datePublished": "2024-04-08",
+      "description": "A fresh perspective on AI engineering in today's rapidly evolving landscape, offering practical approaches and real-world insights.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Amazon"
+      },
+      "genre": ["Technology", "Artificial Intelligence", "Software Engineering"],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "price": "9.99",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "12"
+      }
+    }
+    </script>
+
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Roger Hunt's Blog" href="https://is-a.dev/feed.xml">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://platform.twitter.com">
+    <link rel="preconnect" href="https://platform.linkedin.com">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF6B6B">
+    <link rel="apple-touch-icon" href="/icon-192x192.png">
 </head>
 <body>
     <div class="site-background">
